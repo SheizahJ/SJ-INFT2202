@@ -22,6 +22,14 @@ const servicesContainer = document.querySelector(".services-container");
 const aboutContainer = document.querySelector(".about-container");
 const contactContainer = document.querySelector(".contact-container");
 
+// FUNCTIONS ----------------------------------------------------------------
+/**
+ * Forces user to return to homepage
+ */
+function returnHome() {
+    window.location.href = "../index.html";
+}
+
 // ALL PAGES - NAVBAR -------------------------------------------------------
 const navbarLinksList = document.querySelector(".navbar-nav");
 
@@ -70,7 +78,7 @@ if (page.includes(homeHref)) {
 }
 
 // PRODUCTS -----------------------------------------------------------------
-else if (page.includes(productsHref)) {
+if (page.includes(productsHref)) {
     console.log("Products.....");
 
     // description of products page
@@ -104,7 +112,7 @@ else if (page.includes(servicesHref)) {
 
     // description of services page
     const servicesParagraph = document.createElement("p");
-    servicesParagraph.innerHTML = "Below are details of my work as well as a link to my resume.";
+    servicesParagraph.innerHTML = "Below are details of my top skills as well as a link to my resume.";
     servicesContainer.append(servicesParagraph);
 
     // make new list
@@ -112,15 +120,15 @@ else if (page.includes(servicesHref)) {
 
     // 3 favourite media
     const servicesList1 = document.createElement("li");
-    servicesList1.innerHTML = "<b>TEST</b>: ";
+    servicesList1.innerHTML = "<b>Software Development</b>: I am able to develop software applications catered to your needs. Whether that be through it's physical design or it's backend management, I am capabale of handling requests of any kind.";
     servicesUnorderedList.append(servicesList1);
 
     const servicesList2 = document.createElement("li");
-    servicesList2.innerHTML = "<b>TEST</b>: ";
+    servicesList2.innerHTML = "<b>Communication</b>: Presentation and communicative skills are things that I am quite proficient at given enough time to prepare. I am highly adaptable to any social situation and can handle being a teamplayer for any company that requires a good listener and speaker.";
     servicesUnorderedList.append(servicesList2);
 
     const servicesList3 = document.createElement("li");
-    servicesList3.innerHTML = "<b>TEST</b>: ";
+    servicesList3.innerHTML = "<b>Database Design</b>: Ability to design a database structure through diagrams that help the customer understand the functionality of it entirely prior to implementation. After the consultation, the database is created through SQL along with basic administrative permissions granted to the customer post-deployment.";
     servicesUnorderedList.append(servicesList3);
 
     const resumeList3 = document.createElement("li");
@@ -210,13 +218,6 @@ else if (page.includes(contactHref)) {
     contactContainer.append(contactForm);
 
     // form functions (submit button)
-    /**
-     * Forces user to return to homepage
-     */
-    function returnHome() {
-        window.location.href = "../index.html";
-    }
-
     /**
      * Logs contact info then sends user to homepage.
      * @param {click} event click event
