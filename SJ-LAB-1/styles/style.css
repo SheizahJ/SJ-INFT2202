@@ -1,0 +1,16 @@
+body {
+    background-image: url("../images/gray-background.jpg");
+    background-size: cover;
+}
+
+div.container {
+    padding: 1px;
+}
+
+div.contact-container {
+    text-align: center;
+}
+
+a.list-link {
+    color: beige;
+}
