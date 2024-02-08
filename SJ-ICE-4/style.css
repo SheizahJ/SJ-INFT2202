@@ -23,7 +23,7 @@ body {
     width: calc(100% - 22px);
 }
 
-#signup-form input[type="submit"] {
+#signup-form input[type="submit"], input[type="reset"] {
     padding: 10px 20px;
     background-color: #5c5c5c;
     color: white;
@@ -32,6 +32,6 @@ body {
     cursor: pointer;
 }
 
-#signup-form input[type="submit"]:hover {
+#signup-form input[type="submit"]:hover, input[type="reset"]:hover {
     background-color: #333333;
 }
