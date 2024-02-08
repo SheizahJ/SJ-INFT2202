@@ -34,7 +34,13 @@ $(document).ready(function () {
         }
 
         if (isValid) {
-            
+            $("#confirmation-message").slideUp(function () {
+                $(this).html(`
+                    <p>Thank you, <strong>${name}</strong></p>
+                    <p>Your registration for the show on <strong>${date.toUpperCase()}</strong> is confirmed.</p>
+                    <p>A confirmation email has been sent to <strong>${email}</strong></p>
+                `).slideDown();
+            });
         }
     });
 });
