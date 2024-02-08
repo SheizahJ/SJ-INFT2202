@@ -41,6 +41,8 @@ $(document).ready(function () {
                     <p>A confirmation email has been sent to <strong>${email}</strong></p>
                 `).slideDown();
             });
+
+            $("#signup-form").find("input[type=text], input[type=email], select").val("");
         }
     });
 });
