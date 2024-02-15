@@ -44,7 +44,7 @@ div#beaches-carousel {
 }
 
 .carousel-item {
-    border: 2px solid slateblue;
+    /* border: 2px solid slateblue; */
     text-align: center;
     display: none;
 }
@@ -53,11 +53,18 @@ div#beaches-carousel {
     display: block;
 }
 
+.image {
+    height: 500px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
 .carousel-control {
     border: 3px solid slateblue;
     /* position: absolute;
     top: 50%; */
-    transform: translateY(-50%);
+    /* transform: translateY(-50%); */
     cursor: pointer;
     font-size: 24px;
     color: white;

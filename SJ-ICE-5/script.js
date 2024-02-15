@@ -4,6 +4,7 @@ $(document).ready(function () {
     // Injecting an H1 header into the header HTML element with an id of "header"
     // $("[id=header]")  also works
     $("#header").html("<h1>Welcome to our Travel Blog</h1>");
+    $("#footer").html("<br/><hr/><p>Mountain ranges are one of the most beautiful sights that I have ever seen. I remember flying past British Columbia while travelling to the Philippines and seeing how all those mountains peaked through the clouds. I've also seen images of ponds/lakes next to mountains and it feels so surreal to know that these actually exist.</p>");
 
     // Create Navigation Bar
     const categories = ["Beaches", "Mountains", "Cities", "Forests", "Deserts"];
@@ -37,7 +38,22 @@ const categoryImages = {
         {alt: "Mountain Range", src: "mountain1.jpg"},
         {alt: "Snowy Peak", src: "mountain2.jpg"},
         {alt: "Hiking Trail", src: "mountain3.jpg"}
-    ]
+    ],
+    cities: [
+        {alt: "Toronto", src: "cities1.jpg"},
+        {alt: "New York", src: "cities2.jpg"},
+        {alt: "Calgary", src: "cities3.jpg"}
+    ],
+    forests: [
+        {alt: "Darlington Park", src: "forests1.jpg"},
+        {alt: "Rustling Escapes", src: "forests2.jpg"},
+        {alt: "Treeland Adventure", src: "forests3.jpg"}
+    ],
+    deserts: [
+        {alt: "Sahara Desert", src: "deserts1.jpg"},
+        {alt: "Dry Tundra", src: "deserts2.jpg"},
+        {alt: "Vast Sands", src: "deserts3.jpg"}
+    ],
 };
 function populateCarousel (category) {
     const images = categoryImages[category];
@@ -46,8 +62,10 @@ function populateCarousel (category) {
     let carouselContent = images.map((image, index) => {
         return `
         <div class="carousel-item ${index == 0 ? 'active' : ''}">
-            <div class="image" style="background-image: url('${image.src}')"></div>
-            <p>${image.alt}</p>
+            <h2>${image.alt}</h2>
+            <div class="image" style="background-image: url('./images/${image.src}');">
+                
+            </div>
         </div>
         `;
     }).join("");
@@ -94,4 +112,6 @@ window.moveCarousel = function (category, direction) {
  * 3. Dynamically add content to the Footer using JQuery. The 
  *    content should include a short description of your favourite
  *    category/place and why.
+ * 
+ * DUE: Monday Feb 19, 2024
  */
