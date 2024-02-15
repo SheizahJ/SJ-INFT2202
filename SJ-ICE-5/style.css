@@ -1,0 +1,71 @@
+#navbar {
+    /* border: 3px solid rgb(0, 0, 0); */
+    background-color:rgb(91, 28, 143);
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+}
+
+#navbar ul {
+    list-style-type: none;
+    padding: 0;
+    /* display: flex; // same as display: inline; (below)*/
+}
+
+#navbar li:hover {
+    background-color: rgb(174, 120, 231);
+    border-radius: 5px;
+    /* padding: 5px; */
+}
+
+#navbar li {
+    display: inline;
+    margin-right: 20px;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 5px;
+}
+
+div#beaches-carousel {
+    /* height: 400px;
+    width: 80vw; */
+    border: 3px solid purple;
+}
+
+#content {
+    margin: 20px;
+}
+
+.carousel {
+    border: 3px solid blue;
+    width: 80%;
+    margin: 20px auto;
+    position: relative;
+}
+
+.carousel-item {
+    border: 2px solid slateblue;
+    text-align: center;
+    display: none;
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+.carousel-control {
+    border: 3px solid slateblue;
+    /* position: absolute;
+    top: 50%; */
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+    background-color: slateblue;
+    border-radius: 5px;
+    padding: 3px 5px 3px 5px;
+}
+
+.carousel .next {
+    float: right;
+}
