@@ -277,51 +277,59 @@ $(".login-form").submit(function (event) {
 
 
 // REGISTRATION -------------------------------------------------------------
-$(".register-form").submit(function (event) {
-    event.preventDefault();
+$(document).ready(function () {
+    // create error message div
+    let errorMessageDiv = $("<div hidden id=\"ErrorMessage\">hi</div>");
+    $(".register-form").append(errorMessageDiv);
+    // errorMessageDiv.removeAttr("hidden");
 
-    // variables
-    let errors = "";
-    let isValid = true;
-    let firstName = $("#first-name").val().trim();
-    let lastName = $("#last-name").val().trim();
-    let email = $("#new-email").val().trim();
-    let password = $("#new-pass").val().trim();
-    let confirmPass = $("#confirm-pass").val().trim();
-
-    // error detection
-    if (firstName == "") {
-        errors += "Please enter your first name.\n";
-        isValid = false;
-    }
-    if (lastName == "") {
-        errors += "Please enter your last name.\n";
-        isValid = false;
-    }
-    if (email == "") {
-        errors += "Please enter your email.\n";
-        isValid = false;
-    }
-    if (password == "") {
-        errors += "Please enter your password.\n";
-        isValid = false;
-    }
-    if (confirmPass == "") {
-        errors += "Please enter your confirmation password.\n";
-        isValid = false;
-    }
-    else if (confirmPass != password) {
-        errors += "Passwords do not match.\n";
-        isValid = false;
-    }
-
-    // if is valid
-    if (isValid) {
-        
-    }
-
-    // if not valid
-    else {
-        alert(errors);
-    }
+    $(".register-form").submit(function (event) {
+        event.preventDefault();
+    
+        // variables
+        let errors = "";
+        let isValid = true;
+        let firstName = $("#first-name").val().trim();
+        let lastName = $("#last-name").val().trim();
+        let email = $("#new-email").val().trim();
+        let password = $("#new-pass").val().trim();
+        let confirmPass = $("#confirm-pass").val().trim();
+    
+        // error detection
+        if (firstName == "") {
+            errors += "Please enter your first name.\n";
+            isValid = false;
+        }
+        if (lastName == "") {
+            errors += "Please enter your last name.\n";
+            isValid = false;
+        }
+        if (email == "") {
+            errors += "Please enter your email.\n";
+            isValid = false;
+        }
+        if (password == "") {
+            errors += "Please enter your password.\n";
+            isValid = false;
+        }
+        if (confirmPass == "") {
+            errors += "Please enter your confirmation password.\n";
+            isValid = false;
+        }
+        else if (confirmPass != password) {
+            errors += "Passwords do not match.\n";
+            isValid = false;
+        }
+    
+        // if is valid
+        if (isValid) {
+    
+        }
+    
+        // if not valid
+        else {
+            let navbarInsert = $("<span class=\"navbar-text\"></span>").text(username);
+            alert(errors);
+        }
+    });
 });
