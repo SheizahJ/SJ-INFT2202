@@ -76,3 +76,9 @@ a.list-link {
 .width-fill {
     width: 100%;
 }
+
+#ErrorMessage {
+    border-radius: 2%;
+    background-color:rgb(186, 186, 186);
+    padding: 10px;
+}
