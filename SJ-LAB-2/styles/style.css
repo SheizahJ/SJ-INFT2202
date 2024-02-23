@@ -14,3 +14,65 @@ div.contact-container {
 a.list-link {
     color: beige;
 }
+
+.login-box {
+    /* border: 2px solid red; */
+    border-radius: 2%;
+    background-color:rgb(186, 186, 186);
+    padding: 10px;
+    width: 450px;
+    height: 180px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -225px;
+    margin-top: -200px;
+}
+
+.align-right {
+    float: inline-end;
+}
+
+.icon {
+    /* border: 1px solid black; */
+    width: 30px;
+    vertical-align: middle;
+    float: inline-start;
+}
+
+.login-box input {
+    width: 93%;
+    float: inline-end;
+}
+
+.register-box {
+    /* border: 2px solid red; */
+    border-radius: 2%;
+    background-color:rgb(186, 186, 186);
+    padding: 10px;
+    width: 600px;
+    height: 310px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -350px;
+    margin-top: -270px;
+}
+
+.register-box input {
+    margin-top: 10px;
+}
+
+.register-box button {
+    margin-top: 10px;
+}
+
+.half-row {
+    width: 49%;
+}
+
+.width-fill {
+    width: 100%;
+}

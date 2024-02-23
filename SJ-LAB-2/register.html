@@ -34,15 +34,31 @@
               <a class="nav-link" href="./contact.html">Contact Us</a>
             </li>
             <li class="nav-item me-auto">
-              <a class="nav-link" href="./login.html">Login</a>
-            </li>
+                <a class="nav-link" href="./login.html">Login</a>
+              </li>
           </ul>
           <!-- <span class="navbar-text"> Navbar text with an inline element </span> -->
         </div>
     </nav>
     <br/>
-    <div class="about-container container">
-        <h3>About Us</h3>
+    <div class="login-container">
+        <div class="register-box">
+            <h2>Register</h2>
+            <p>Create an account. It's free and only takes a minute.</p>
+            <div>
+                <input class="half-row" type="text" placeholder="First Name" name="firstName" id="first-name" required>
+                <input class="half-row align-right" type="text" placeholder="Last Name" name="lastName" id="last-name" required>
+            </div>
+            <div>
+                <input class="width-fill" type="email" placeholder="Email" name="email" id="new-email"  required>
+                <input class="width-fill" type="password" placeholder="Password" name="newPassword" id="new-pass"  required>
+                <input class="width-fill" type="password" placeholder="Confirm Password" name="confirmPass" id="confirm-pass"  required>
+            </div>
+            <div>
+                <button class="align-right" type="submit">Register</button>
+            </div>
+            <p>Already have an account? <a href="./login.html">Sign in</a></p>
+        </div>
     </div>
 </body>
 </html>
