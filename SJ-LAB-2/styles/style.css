@@ -15,7 +15,7 @@ a.list-link {
     color: beige;
 }
 
-.login-box {
+.login-form {
     /* border: 2px solid red; */
     border-radius: 2%;
     background-color:rgb(186, 186, 186);
@@ -41,12 +41,12 @@ a.list-link {
     float: inline-start;
 }
 
-.login-box input {
+.login-form input {
     width: 93%;
     float: inline-end;
 }
 
-.register-box {
+.register-form {
     /* border: 2px solid red; */
     border-radius: 2%;
     background-color:rgb(186, 186, 186);
@@ -58,14 +58,14 @@ a.list-link {
     top: 50%;
     left: 50%;
     margin-left: -350px;
-    margin-top: -270px;
+    margin-top: -255px;
 }
 
-.register-box input {
+.register-form input {
     margin-top: 10px;
 }
 
-.register-box button {
+.register-form button {
     margin-top: 10px;
 }
 

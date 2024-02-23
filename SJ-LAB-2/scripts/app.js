@@ -14,6 +14,8 @@ const productsHref = "product.html";
 const servicesHref = "services.html";
 const aboutHref    = "about.html";
 const contactHref  = "contact.html";
+// const loginHref    = "login.html";
+// const registerHref = "register.html";
 
 // CONTAINERS ---------------------------------------------------------------
 const homeContainer = document.querySelector(".main-container");
@@ -240,3 +242,38 @@ else if (page.includes(contactHref)) {
     }
     submitButton.addEventListener("click", contactOnSubmit);
 }
+
+// LOGIN --------------------------------------------------------------------
+$(".login-form").submit(function (event) {
+    event.preventDefault();
+
+    // variables
+    let errors = "";
+    let isValid = true;
+    let username = $("#username").val().trim();
+    let password = $("#password").val().trim();
+    
+    // error detection
+    if (username == "") {
+        errors += "Please enter your username.\n";
+        isValid = false;
+    }
+    if (password == "") {
+        errors += "Please enter your password.\n";
+        isValid = false;
+    }
+
+    // if valid
+    if (isValid) {
+        let navbarInsert = $("<span class=\"navbar-text\"></span>").text(username);
+        navbarInsert.insertBefore("#login-bar");
+    }
+
+    // if not valid
+    else {
+        alert(errors);
+    }
+});
+
+
+// REGISTRATION -------------------------------------------------------------
