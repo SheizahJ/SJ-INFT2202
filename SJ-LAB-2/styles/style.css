@@ -1,3 +1,4 @@
+/* GENERAL STYLING */
 body {
     background-image: url("../images/gray-background.jpg");
     background-size: cover;
@@ -15,6 +16,27 @@ a.list-link {
     color: beige;
 }
 
+.align-right {
+    float: inline-end;
+}
+
+.icon {
+    /* border: 1px solid black; */
+    width: 30px;
+    vertical-align: middle;
+    float: inline-start;
+}
+
+.half-row {
+    width: 49%;
+}
+
+.width-fill {
+    width: 100%;
+}
+
+
+/* LOGIN FORM */
 .login-form {
     /* border: 2px solid red; */
     border-radius: 2%;
@@ -30,22 +52,14 @@ a.list-link {
     margin-top: -200px;
 }
 
-.align-right {
-    float: inline-end;
-}
-
-.icon {
-    /* border: 1px solid black; */
-    width: 30px;
-    vertical-align: middle;
-    float: inline-start;
-}
 
 .login-form input {
     width: 93%;
     float: inline-end;
 }
 
+
+/* REGISTRATION FORM */
 .register-form {
     /* border: 2px solid red; */
     border-radius: 2%;
@@ -67,14 +81,6 @@ a.list-link {
 
 .register-form button {
     margin-top: 10px;
-}
-
-.half-row {
-    width: 49%;
-}
-
-.width-fill {
-    width: 100%;
 }
 
 #ErrorMessage {
