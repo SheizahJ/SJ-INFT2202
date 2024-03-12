@@ -113,18 +113,24 @@ document.getElementById("loadPokemon").addEventListener("click", async function 
     // fetch list of pokemons
     // REFERENCE: xhr.open("GET", "https://pokeapi.co/api/v2/pokemon?limit=10&offset=0");
     
+    // get input value
+    var pokemonName = document.getElementById("pokemonName").value.trim().toLowerCase();
+
+    console.log(pokemonName);
+
     // using FETCH and .THEN
     try {
         let pokemonList = await fetch(
             // URL: for ICE -> Store user input in variable called pokemonName
             // `https://pokeapi.co/api/v2/pokemon/$(pokemonName)`
             
-            "https://pokeapi.co/api/v2/pokemon?limit=10&offset=0"
+            `https://pokeapi.co/api/v2/pokemon/${pokemonName}`
         ); // By default, it sends a GET HTTP Request
 
         // display list of pokemons in HTML
         var pokemonString = "";
         var jsonResults = await pokemonList.json();
+        console.log(jsonResults); // display pokemon details
         jsonResults.results.forEach(pokemon => {
             pokemonString += `<li><a href=${pokemon.url}>${pokemon.name}</a></li>`;
         });
@@ -138,7 +144,7 @@ document.getElementById("loadPokemon").addEventListener("click", async function 
 
 
 /* ------ ICE 6 Details -------
-    1. Create a form where the user will be able to type in the name of a pokemon.
+    1. [V] Create a form where the user will be able to type in the name of a pokemon.
 
     2. After the user submits the form, send an API GET Request to the pokeapi searching 
        for the details of the pokemon name the user submitted from the form.
