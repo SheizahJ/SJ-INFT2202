@@ -116,7 +116,11 @@ document.getElementById("loadPokemon").addEventListener("click", async function 
     
     // get input value
     var pokemonName = document.getElementById("pokemonName").value.trim().toLowerCase();
-    console.log(pokemonName);
+
+    if (pokemonName == "") {
+        alert("Please provide the name of a Pokemon in the search box.");
+        return;
+    }
 
     // using FETCH and .THEN
     try {
@@ -168,6 +172,7 @@ document.getElementById("loadPokemon").addEventListener("click", async function 
         document.getElementById("abilityHeader").innerHTML = `${pokemonName.toUpperCase()} ABILITIES`; 
         document.getElementById("abilityList").innerHTML = abilityDetails;
     } catch (error) {
+        alert("Unable to find given Pokemon. Please try again.");
         console.log("We have encountered an error: " + error)
     }
     
@@ -180,9 +185,9 @@ document.getElementById("loadPokemon").addEventListener("click", async function 
     2. [V] After the user submits the form, send an API GET Request to the pokeapi searching 
        for the details of the pokemon name the user submitted from the form.
     
-    3. If the api returns the pokemon details successfully, then display the details of 
+    3. [V] If the api returns the pokemon details successfully, then display the details of 
        the pokemon in the HTML (i.e. update the body of the HTML to have the pokemon).
 
-    4. If the api returns an error that it can't find the pokemon, display the error to
+    4. [V] If the api returns an error that it can't find the pokemon, display the error to
        the user and ask them to type a different pokemon name.
 */
