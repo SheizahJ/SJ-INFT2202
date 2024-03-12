@@ -109,33 +109,64 @@ console.log("Script is running!");
 
 
 // USING FETCH AND ASYNC AWAIT
-document.getElementById("loadPokemon").addEventListener("click", async function () {
+document.getElementById("loadPokemon").addEventListener("click", async function (event) {
+    event.preventDefault();
     // fetch list of pokemons
     // REFERENCE: xhr.open("GET", "https://pokeapi.co/api/v2/pokemon?limit=10&offset=0");
     
     // get input value
     var pokemonName = document.getElementById("pokemonName").value.trim().toLowerCase();
-
     console.log(pokemonName);
 
     // using FETCH and .THEN
     try {
         let pokemonList = await fetch(
             // URL: for ICE -> Store user input in variable called pokemonName
-            // `https://pokeapi.co/api/v2/pokemon/$(pokemonName)`
+            // `https://pokeapi.co/api/v2/pokemon/${pokemonName}`
             
             `https://pokeapi.co/api/v2/pokemon/${pokemonName}`
         ); // By default, it sends a GET HTTP Request
+        
 
         // display list of pokemons in HTML
-        var pokemonString = "";
         var jsonResults = await pokemonList.json();
         console.log(jsonResults); // display pokemon details
-        jsonResults.results.forEach(pokemon => {
-            pokemonString += `<li><a href=${pokemon.url}>${pokemon.name}</a></li>`;
-        });
-        document.getElementById("pokemonList").innerHTML = pokemonString; 
 
+        // Pokemon Title
+        document.getElementById("pokemonTitle").innerHTML = `${pokemonName.toUpperCase()} DETAILS`; 
+        
+        // Pokemon Basic Info
+        // get info
+        var pokemonInfo = "";
+        pokemonInfo += `<li>BASE EXPERIENCE: ${jsonResults.base_experience}</li>`;
+        pokemonInfo += `<li>HEIGHT: ${jsonResults.height}</li>`;
+        pokemonInfo += `<li>WEIGHT: ${jsonResults.weight}</li>`;
+
+        // show info
+        document.getElementById("infoHeader").innerHTML = `${pokemonName.toUpperCase()} INFO`; 
+        document.getElementById("basicInfo").innerHTML = pokemonInfo;
+
+        // Pokemon Stats
+        // get info
+        var formDetails = "";
+        jsonResults.stats.forEach(pokemonStat => {
+            formDetails += `<li>${pokemonStat.stat.name.toUpperCase()}: ${pokemonStat.base_stat}</li>`;
+        });
+
+        // show info
+        document.getElementById("statsHeader").innerHTML = `${pokemonName.toUpperCase()} STATS`;
+        document.getElementById("statsList").innerHTML = formDetails;
+
+        // Pokemon Abilities
+        // get info
+        var abilityDetails = "";
+        jsonResults.abilities.forEach(pokemonAbility => {
+            abilityDetails += `<li>${pokemonAbility.ability.name}</li>`;
+        });
+
+        // show info
+        document.getElementById("abilityHeader").innerHTML = `${pokemonName.toUpperCase()} ABILITIES`; 
+        document.getElementById("abilityList").innerHTML = abilityDetails;
     } catch (error) {
         console.log("We have encountered an error: " + error)
     }
@@ -146,7 +177,7 @@ document.getElementById("loadPokemon").addEventListener("click", async function 
 /* ------ ICE 6 Details -------
     1. [V] Create a form where the user will be able to type in the name of a pokemon.
 
-    2. After the user submits the form, send an API GET Request to the pokeapi searching 
+    2. [V] After the user submits the form, send an API GET Request to the pokeapi searching 
        for the details of the pokemon name the user submitted from the form.
     
     3. If the api returns the pokemon details successfully, then display the details of 
