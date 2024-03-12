@@ -118,7 +118,7 @@ document.getElementById("loadPokemon").addEventListener("click", async function 
     var pokemonName = document.getElementById("pokemonName").value.trim().toLowerCase();
 
     if (pokemonName == "") {
-        alert("Please provide the name of a Pokemon in the search box.");
+        document.getElementById("error").innerHTML = `Please provide the name of a Pokemon in the search box.`; 
         return;
     }
 
@@ -172,8 +172,8 @@ document.getElementById("loadPokemon").addEventListener("click", async function 
         document.getElementById("abilityHeader").innerHTML = `${pokemonName.toUpperCase()} ABILITIES`; 
         document.getElementById("abilityList").innerHTML = abilityDetails;
     } catch (error) {
-        alert("Unable to find given Pokemon. Please try again.");
-        console.log("We have encountered an error: " + error)
+        document.getElementById("error").innerHTML = `Unable to find given Pokemon. Please try again...`; 
+        console.log("We have encountered an error: " + error);
     }
     
 });
