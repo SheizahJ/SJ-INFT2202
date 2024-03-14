@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script
+      defer
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous">
+    </script>
+    <script defer src="./scripts/app.js"></script>
+    <link rel="stylesheet" href="./styles/style.css"/>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css"/>
+    <title>Registration</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="./index.html">INFT 2202 - Lab 1</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link product-bar" href="./product.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./about.html">About Us</a>
+            </li>
+            <li class="nav-item contact-bar">
+              <a class="nav-link" href="./contact.html">Contact Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./login.html">Login</a>
+              </li>
+          </ul>
+          <!-- <span class="navbar-text"> Navbar text with an inline element </span> -->
+        </div>
+    </nav>
+    <br/>
+    <div class="login-container">
+        <form class="register-form">
+            <h2>Register</h2>
+            <p>Create an account. It's free and only takes a minute.</p>
+            <div>
+                <input class="half-row" type="text" placeholder="First Name" name="firstName" id="first-name">
+                <input class="half-row align-right" type="text" placeholder="Last Name" name="lastName" id="last-name">
+            </div>
+            <div>
+                <input class="width-fill" type="email" placeholder="Email" name="email" id="new-email">
+                <input class="width-fill" type="password" placeholder="Password" name="newPassword" id="new-pass">
+                <input class="width-fill" type="password" placeholder="Confirm Password" name="confirmPass" id="confirm-pass">
+            </div>
+            <div>
+                <button class="align-right">Register</button>
+            </div>
+            <p>Already have an account? <a href="./login.html">Sign in</a></p>
+        </form>
+    </div>
+</body>
+</html>

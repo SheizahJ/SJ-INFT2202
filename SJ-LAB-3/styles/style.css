@@ -1,0 +1,90 @@
+/* GENERAL STYLING */
+body {
+    background-image: url("../images/gray-background.jpg");
+    background-size: cover;
+}
+
+div.container {
+    padding: 1px;
+}
+
+div.contact-container {
+    text-align: center;
+}
+
+a.list-link {
+    color: beige;
+}
+
+.align-right {
+    float: inline-end;
+}
+
+.icon {
+    /* border: 1px solid black; */
+    width: 30px;
+    vertical-align: middle;
+    float: inline-start;
+}
+
+.half-row {
+    width: 49%;
+}
+
+.width-fill {
+    width: 100%;
+}
+
+
+/* LOGIN FORM */
+.login-form {
+    /* border: 2px solid red; */
+    border-radius: 2%;
+    background-color:rgb(186, 186, 186);
+    padding: 10px;
+    width: 450px;
+    height: 180px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -225px;
+    margin-top: -200px;
+}
+
+
+.login-form input {
+    width: 93%;
+    float: inline-end;
+}
+
+
+/* REGISTRATION FORM */
+.register-form {
+    /* border: 2px solid red; */
+    border-radius: 2%;
+    background-color:rgb(186, 186, 186);
+    padding: 10px;
+    width: 600px;
+    height: 310px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -350px;
+    margin-top: -255px;
+}
+
+.register-form input {
+    margin-top: 10px;
+}
+
+.register-form button {
+    margin-top: 10px;
+}
+
+#ErrorMessage {
+    border-radius: 2%;
+    background-color:rgb(186, 186, 186);
+    padding: 10px;
+}

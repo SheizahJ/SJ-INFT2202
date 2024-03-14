@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script
+      defer
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous">
+    </script>
+    <script defer src="./scripts/app.js"></script>
+    <link rel="stylesheet" href="./styles/style.css"/>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css"/>
+    <title>Login</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="./index.html">INFT 2202 - Lab 1</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link product-bar" href="./product.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./about.html">About Us</a>
+            </li>
+            <li class="nav-item contact-bar">
+              <a class="nav-link" href="./contact.html">Contact Us</a>
+            </li>
+            <li class="nav-item" id="login-bar">
+              <a class="nav-link" href="./login.html">Login</a>
+            </li>
+          </ul>
+        </div>
+        <div class="flex-row-reverse">
+          
+        </div>
+    </nav>
+    <br/>
+    <div class="login-container">
+      <form class="login-form">
+        <h2>Login</h2>
+        <div>
+          <label for="username"><img class="icon" src="./images/user_icon.png" alt=""></label>
+          <input type="text" placeholder="Enter your username" name="username" id="username">
+        </div>
+        <div>
+          <label for="password"><img class="icon" src="./images/lock_icon.png" alt=""></label>
+          <input type="password" placeholder="Enter your password" name="password" id="password">
+        </div>
+        <div>
+          <button class="align-right" type="submit">Login</button>
+        </div>
+        <p>Don't have an account? <a href="./register.html">Register here!</a></p>
+      </form>
+    </div>
+</body>
+</html>
