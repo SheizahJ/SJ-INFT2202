@@ -5,22 +5,11 @@
  */
 
 $(document).ready(async function () {
-    let blogHTML = `
-    <div class="card blog-container container" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">Card Title</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
-        </div>
-    </div>`
-
-    const pendingMessage = $("#pending-message")[0];
+    const body = $("body")[0];
 
     try {
         // set pending message
-        pendingMessage.innerHTML = "Fetching posts. Please wait...";
+        $("#pending-message")[0].innerHTML = "Fetching posts. Please wait...";
 
         // iterate 20 times (20 blog posts)
         for (let index = 1; index <= 20; index++) {
@@ -28,17 +17,28 @@ $(document).ready(async function () {
             let jsonPlaceholder = await fetch(
                 `https://jsonplaceholder.typicode.com/posts/${index}`
             ); // By default, it sends a GET HTTP Request
-            console.log(jsonPlaceholder);
 
             // get json results
             let placeholder = await jsonPlaceholder.json();
 
+            let blogHTML = `
+            <div class="card blog-container container" style="width: 18rem;">
+                <img class="card-img-top" src="..." alt="Card image cap">
+                <div class="card-body">
+                    <h6 class="card-subtitle mb-2 text-muted">Blog Post ${index}</h6>
+                    <h5 class="card-title">${placeholder.title.toUpperCase()}</h5>
+                    <p class="card-text">${placeholder.body}</p>
+                    <a href="https://github.com/SheizahJ" class="card-link">GitHub</a>
+                    <a href="https://www.linkedin.com/in/sheizah-jimenez-9b1b29265/" class="card-link">LinkedIn</a>
+                </div>
+            </div>
+            <br/>`
 
-            console.log(placeholder);
+            body.innerHTML += blogHTML;
+
+            // if successful, empty pending message
+            $("#pending-message")[0].innerHTML = "";
         }
-
-        // if successful, empty pending message
-        pendingMessage.innerHTML = "";
     }
     catch (error) {
         // set error message
