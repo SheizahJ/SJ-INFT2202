@@ -8,7 +8,7 @@ div.container {
     padding: 1px;
 }
 
-div.contact-container {
+.center-text {
     text-align: center;
 }
 
@@ -87,4 +87,8 @@ a.list-link {
     border-radius: 2%;
     background-color:rgb(186, 186, 186);
     padding: 10px;
+}
+
+#pending-message {
+    color: gray;
 }
