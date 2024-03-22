@@ -33,6 +33,9 @@ let navBar = `
             <li class="nav-item me-auto" id="login-bar">
               <a class="nav-link" href="./login.html">Login</a>
             </li>
+            <li class="nav-item me-auto">
+              <a class="nav-link" href="./blog.html">Blog</a>
+            </li>
           </ul>
           <!-- <span class="navbar-text"> Navbar text with an inline element </span> -->
         </div>
