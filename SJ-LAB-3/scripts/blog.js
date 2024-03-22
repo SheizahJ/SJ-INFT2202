@@ -5,7 +5,6 @@
  */
 
 $(document).ready(async function () {
-    const body = $("body")[0];
     const pixabayKey = "43006455-a08f7b02dec1ceb4a1418f648";
 
     let images = [];
@@ -57,7 +56,9 @@ $(document).ready(async function () {
             $("#pending-message")[0].innerHTML = "";
         }
 
-        body.innerHTML += allBlogPosts;
+        console.log($("#blog-container"));
+
+        $("#blog-container")[0].innerHTML += allBlogPosts;
     }
     catch (error) {
         // set error message

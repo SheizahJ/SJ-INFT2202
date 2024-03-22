@@ -92,3 +92,12 @@ a.list-link {
 #pending-message {
     color: gray;
 }
+
+#blog-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-flow: space-evenly;
+    align-content: flex-start;
+    gap: 20px 10px;
+}
