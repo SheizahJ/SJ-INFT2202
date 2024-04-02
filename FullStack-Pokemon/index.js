@@ -8,6 +8,7 @@ app.set("views", "./views"); // Create the views folder
 app.set("view engine", "ejs");
 
 app.get("/hello", (req, res) => res.send("hello there"));
+app.get("/home", (req, res) => res.send("Home Page"));
 
 // We are instructing our application to look into the routes folder and into the
 // pokemon.js file inside that folder to manage any routes that begin with the path "/"
