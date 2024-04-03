@@ -1,17 +1,15 @@
 {
-  "name": "fullstack-pokemon",
+  "name": "sj-ice-7",
   "version": "1.0.0",
-  "description": "Pokemon Collectors project. You can search through pokemon, and add them to your own saved collection.",
+  "description": "ice 7 homepage",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "nodemon index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Sheizah Jimenez",
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.9",
-    "express": "^4.19.2",
-    "nodemon": "^3.1.0"
+    "express": "^4.19.2"
   }
 }
