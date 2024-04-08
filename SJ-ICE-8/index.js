@@ -23,5 +23,12 @@ app.listen(3500, () => {
   console.log("Express server listening on port 3500...");
 });
 
-// In Class Exercise #7 (DUE April 2nd):
-// As a User, I want to visit localhost:3500/home and see a blank page with the text "Home Page"
+// ICE 8: Implement the Read all pokemons from saved collection story:
+/*
+  1. Router - Get /pokemonList
+  2. Controller - getAllPokemons(req, res)
+  3. EJS - displayMyCollection.ejs
+  
+  As for the button to view your collection, you can add it in the homePage.ejs 
+  (for extra points put it in a navbar using EJS partials)
+*/

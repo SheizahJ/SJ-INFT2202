@@ -54,19 +54,43 @@ async function savePokemonToCollection(req, res) {
   res.redirect("/"); // redirect user back to slash route upon completion
 }
 
-// ICE 8: Implement the Read all pokemons from saved collection story:
-/*
-  1. Router - Get /pokemonList
-  2. Controller - getAllPokemons(req, res)
-  3. EJS - displayMyCollection.ejs
-  
-  As for the button to view your collection, you can add it in the homePage.ejs 
-  (for extra points put it in a navbar using EJS partials)
-*/
+async function getAllPokemons(req, res) {
+  // grab form data
+  let formData = req.body;
+
+  // retireve collection from database
+  try {
+      let pokemonCollection = await Pokemon.find();
+
+      let collectionForm = formData.myCollection;
+
+      pokemonCollection.forEach((pokemon) => {
+        console.log(pokemon.name);
+
+        let pokemonForm = `<div>
+          <h2>${pokemon.name}</h2>
+          <ul>
+            <li>ID: ${pokemon.pokemonId}</li>
+            <li>Height: ${pokemon.height}</li>
+          </ul>
+          <img height="200px" width="auto" src="${pokemon.image}" />
+        </div>
+        <br/>`
+
+        collectionForm;
+      });
+
+      res.render("displayMyCollection.ejs", { collection: pokemonCollection });
+  }
+  catch (err) {
+    console.log(`Error while retrieving pokemon collection: ${err}`);
+  }
+}
 
 module.exports = {
   greetPokemon,
   displayHomePage,
   searchPokemon,
   savePokemonToCollection,
+  getAllPokemons,
 };
