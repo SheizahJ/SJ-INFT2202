@@ -40,6 +40,8 @@ async function savePokemonToCollection(req, res) {
 
   // Create a new pokemon in our Database
   try {
+    console.log(formData);
+
     await Pokemon.create({
       pokemonId: formData.pokemonId,
       name: formData.pokemonName,
@@ -55,36 +57,28 @@ async function savePokemonToCollection(req, res) {
 }
 
 async function getAllPokemons(req, res) {
-  // grab form data
-  let formData = req.body;
-
   // retireve collection from database
   try {
       let pokemonCollection = await Pokemon.find();
 
-      let collectionForm = formData.myCollection;
+      let collectionInfo = [];
 
       pokemonCollection.forEach((pokemon) => {
+        collectionInfo.push({
+          id: pokemon.pokemonId,
+          name: pokemon.name,
+          height: pokemon.height,
+          image: pokemon.image
+        });
+
         console.log(pokemon.name);
-
-        let pokemonForm = `<div>
-          <h2>${pokemon.name}</h2>
-          <ul>
-            <li>ID: ${pokemon.pokemonId}</li>
-            <li>Height: ${pokemon.height}</li>
-          </ul>
-          <img height="200px" width="auto" src="${pokemon.image}" />
-        </div>
-        <br/>`
-
-        collectionForm;
       });
 
-      res.render("displayMyCollection.ejs", { collection: pokemonCollection });
-  }
-  catch (err) {
-    console.log(`Error while retrieving pokemon collection: ${err}`);
-  }
+      res.render("displayMyCollection.ejs", { collection: collectionInfo });
+    }
+    catch (err) {
+      console.log(`Error while retrieving pokemon collection: ${err}`);
+    }
 }
 
 module.exports = {

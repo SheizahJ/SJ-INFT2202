@@ -7,6 +7,19 @@
 </head>
 <body>
     <h1>My Pokemon Collection</h1>
-    <div name="myCollection"></div>
+    <div name="collectionDiv" value="">
+        <% for(var i = 0; i < collection.length; i++) { %>
+        <div>
+            <h2>Pokemon #<%= i+1 %>: <%= collection[i].name %></h2>
+            <img height="200px" width="auto" src="<%= collection[i].image %>" />
+            <h3>Info About <%= collection[i].name %></h3>
+            <ul>
+                <li><b>ID:</b> <%= collection[i].id %></li>
+                <li><b>Height:</b> <%= collection[i].height %>m</li>
+            </ul>
+        </div>
+        <br/>
+        <% } %>
+    </div>
 </body>
 </html>
