@@ -1,0 +1,30 @@
+<%- include("partials/header.ejs")%>
+
+<% myCollection.forEach(pokemon => { %>
+
+<h2>Name: <%= pokemon.name %> </h2>
+<h3>Height: <%= pokemon.height %></h3>
+<img src="<%= pokemon.photo %>">
+
+<form action="/editPokemon/<%= pokemon._id %>" method="POST">
+    <label for="newName">Set Name:</label>
+    <input type="text" name="newName"/>
+    <br/>
+    <label for="newHeight">Set Height:</label>
+    <input type="text" name="newHeight"/>
+    <br/>
+    <input type="hidden" value="<%= pokemon.name %>" name="name" />
+    <input type="hidden" value="<%= pokemon.height %>" name="height"/>
+    <input type="submit" value="Update Pokemon"/>
+</form>
+<form action="/deletePokemon/<%= pokemon._id %>" method="POST">
+    <input type="submit" value="Delete Pokemon">
+</form>
+<br/>
+
+<% }) %>
+
+
+
+
+<%- include("partials/footer.ejs")%>
