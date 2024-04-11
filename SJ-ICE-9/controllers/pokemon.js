@@ -82,9 +82,9 @@ async function editPokemonById(req, res) {
     let newName = formData.newName.trim();
     let newHeight = parseInt(formData.newHeight.trim());
 
-    // set default
-    if (newName == "") newName = pokemonName;
-    if (newHeight == "") newHeight = pokemonHeight;
+    // validation
+    if (newName == "" || typeof(newName) != "string") newName = pokemonName;
+    if (newHeight == "" || isNaN(newHeight)) newHeight = pokemonHeight;
 
     // update pokemon
     const pokeId = req.params.idOfPokemon;
