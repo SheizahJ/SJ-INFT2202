@@ -14,6 +14,9 @@ const app = express();
 require("dotenv").config();
 DBConfig.connectToDatabase();
 
+app.set("views", "./views");
+app.set("view engine", "ejs");
+
 // use
 app.use("/", animalController);
 

@@ -12,12 +12,19 @@ function displayHomePage(req, res) {
 }
 
 /**
- * displays the all-animals.ejs page
+ * gets all animals from the database. displays the all-animals.ejs page
  * @param {*} req 
  * @param {*} res 
  */
-function displayAnimalList(req, res) {
-    res.render("./animals/all-animals.ejs");
+async function displayAnimalList(req, res) {
+    try {
+        const myCollection = await Animal.find({});
+        res.render("./animals/all-animals.ejs", { myCollection });
+      } catch (err) {
+        console.err("Error with getting saved collection");
+        res.status(500).send("Error in getting saved collection");
+      }
+    
 }
 
 /**

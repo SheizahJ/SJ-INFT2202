@@ -16,44 +16,45 @@
 		<%- include('../partials/_navbar.ejs')%>
 		<div class='container'>
             <!-- template for now -->
-            <form action="/animals/edit-animal">
+            <% myCollection.forEach(animal => { %>
+            <form action="/animals/edit-animal" method="POST">
                 <table class="table table-striped">
                     <tr>
                         <th class="col-md-2">Zoo</th>
-                        <td >PLACEHOLDER</th>
+                        <td ><%= animal.zoo %></th>
                     </tr>
                     <tr>
                         <th>Scientific Name</th>
-                        <td>PLACEHOLDER</th>
+                        <td><%= animal.scientificName %></th>
                     </tr>
                     <tr>
                         <th>Common Name</th>
-                        <td>PLACEHOLDER</th>
+                        <td><%= animal.commonName %></th>
                     </tr>
                     <tr>
                         <th>Given Name</th>
-                        <td>PLACEHOLDER</th>
+                        <td><%= animal.givenName %></th>
                     </tr>
                     <tr>
                         <th>Gender</th>
-                        <td>PLACEHOLDER</th>
+                        <td><%= animal.gender %></th>
                     </tr>
                     <tr>
                         <th>Date of Birth</th>
-                        <td>PLACEHOLDER</th>
+                        <td><%= animal.dateOfBirth %></th>
                     </tr>
                     <tr>
                         <th>Age</th>
-                        <td>PLACEHOLDER</th>
+                        <td><%= animal.age %></th>
                     </tr>
                     <tr>
                         <th>Trasportability?</th>
-                        <td>PLACEHOLDER</th>
+                        <td><%= animal.isTransportable %></th>
                     </tr>
                 </table>
                 <input type="submit" class="btn btn-primary mb-2" value="Edit Animal"/>
             </form>
-
+            <% }) %>
         </div>
 	</body>
 </html>
