@@ -16,7 +16,7 @@
 		<%- include('../partials/_navbar.ejs')%>
 		<div class="container">
             <h2>Add an Animal to the Database</h2>
-            <form class="card p-3 bg-light">
+            <form action="/animals/add-animal" method="POST" class="card p-3 bg-light">
                 <h5>Add Animal</h5>
                 <hr/>
                 <div class="form-row" name="animal-form">
@@ -38,9 +38,9 @@
                     </div>
                     <label for="gender">Gender</label>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="maleGender" name="gender" class="custom-control-input">
+                        <input type="radio" id="male" name="gender" class="custom-control-input" value="Male">
                         <label class="custom-control-label" for="maleGender">Male</label>
-                        <input type="radio" id="femaleGender" name="gender" class="custom-control-input">
+                        <input type="radio" id="female" name="gender" class="custom-control-input" value="Female">
                         <label class="custom-control-label" for="femaleGender">Female</label>
                     </div>
                     <div class="col">
@@ -53,9 +53,9 @@
                     </div>
                     <label for="isTransportable">Is Transportable</label>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="available" name="isTransportable" class="custom-control-input">
+                        <input type="radio" id="available" name="isTransportable" class="custom-control-input" value="AVIALABLE">
                         <label class="custom-control-label" for="available">Available</label>
-                        <input type="radio" id="unavailable" name="isTransportable" class="custom-control-input">
+                        <input type="radio" id="unavailable" name="isTransportable" class="custom-control-input" value="UNAVIALABLE">
                         <label class="custom-control-label" for="unavailable">Unavailable</label>
                     </div>
                     <br/>

@@ -16,25 +16,26 @@
 		<%- include('../partials/_navbar.ejs')%>
 		<div class="container">
             <h2>Edit Animal Entry</h2>
-            <form class="card p-3 bg-light">
-                <h5>Edit Animal</h5>
-                <hr/>
-                <div class="form-row" name="animal-form">
+            <div class="form-row card p-3 bg-light" name="animal-form">
+                <form action="/animals/all-animals">
+                
+                    <h5>Edit Animal</h5>
+                    <hr/>
                     <div class="col">
                         <label for="zoo">Home Zoo</label>
-                        <input type="text" class="form-control" name="zoo">
+                        <input type="text" class="form-control" name="zoo" value="<%= collection.zoo %>">
                     </div>
                     <div class="col">
                         <label for="scientificName">Scientific Name</label>
-                        <input type="text" class="form-control" name="scientificName">
+                        <input type="text" class="form-control" name="scientificName" value="<%= collection.scientificName %>">
                     </div>
                     <div class="col">
                         <label for="commonName">Common Name</label>
-                        <input type="text" class="form-control" name="commonName">
+                        <input type="text" class="form-control" name="commonName" value="<%= collection.commonName %>">
                     </div>
                     <div class="col">
                         <label for="givenName">Given Name</label>
-                        <input type="text" class="form-control" name="givenName">
+                        <input type="text" class="form-control" name="givenName" value="<%= collection.givenName %>">
                     </div>
                     <label for="gender">Gender</label>
                     <div class="custom-control custom-radio custom-control-inline">
@@ -45,11 +46,11 @@
                     </div>
                     <div class="col">
                         <label for="dateOfBirth">Date of Birth</label>
-                        <input type="date" class="form-control" name="dateOfBirth">
+                        <input type="date" class="form-control" name="dateOfBirth" value="<%= collection.dateOfBirth %>">
                     </div>
                     <div class="col">
                         <label for="age">Age</label>
-                        <input type="number" class="form-control" name="age">
+                        <input type="number" class="form-control" name="age" value="<%= collection.age %>">
                     </div>
                     <label for="isTransportable">Is Transportable</label>
                     <div class="custom-control custom-radio custom-control-inline">
@@ -59,10 +60,12 @@
                         <label class="custom-control-label" for="unavailable">Unavailable</label>
                     </div>
                     <br/>
-                    <input type="submit" class="btn btn-primary mb-2" value="Confirm"/>
-                    <input type="button" class="btn btn-primary mb-2" value="Delete Animal"/>
-                </div>
-              </form>
+                    <input type="submit" class="btn btn-primary mb-2" value="Confirm Edit"/>
+                </form>
+                <form action="/animals/delete-animal/<%= collection._id %>" method="POST">
+                    <input type="submit" class="btn btn-primary mb-2" value="Delete Animal"/>
+                </form>
+            </div>
         </div>
 	</body>
 </html>

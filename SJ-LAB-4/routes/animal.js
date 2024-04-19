@@ -7,9 +7,11 @@ const animalController = require("../controllers/animalController");
 router.get("/", animalController.displayHomePage);
 router.get("/animals/all-animals", animalController.displayAnimalList);
 router.get("/animals/entry-form", animalController.displayEntryForm);
-router.get("/animals/edit-animal", animalController.displayEditAnimal);
+router.post("/animals/edit-animal", animalController.displayEditAnimal);
 
 // post routes; data entry
+router.post("/animals/add-animal", animalController.createAnimal);
+router.post("/animals/delete-animal/:animalId", animalController.deleteAnimal);
 
 // Share the router with others
 module.exports = router;

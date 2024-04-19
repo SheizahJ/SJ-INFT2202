@@ -1,7 +1,7 @@
 // imports
 const Animal = require("../model/Animal");
 
-// DISPLAY FUNCTIONS
+// GET DISPLAY FUNCTIONS
 /**
  * displays the main.ejs page
  * @param {*} req 
@@ -18,13 +18,12 @@ function displayHomePage(req, res) {
  */
 async function displayAnimalList(req, res) {
     try {
-        const myCollection = await Animal.find({});
-        res.render("./animals/all-animals.ejs", { myCollection });
+        const collection = await Animal.find({});
+        res.render("./animals/all-animals.ejs", { collection });
       } catch (err) {
         console.err("Error with getting saved collection");
         res.status(500).send("Error in getting saved collection");
       }
-    
 }
 
 /**
@@ -37,20 +36,73 @@ function displayEntryForm(req, res) {
 }
 
 /**
- * displays the edit-animal.ejs page
+ * gets the animal data from the list. displays the data on the edit-animal.ejs page
+ * for editting.
  * @param {*} req 
  * @param {*} res 
  */
 function displayEditAnimal(req, res) {
-    res.render("./animals/edit-animal.ejs");
+    // form's data
+    const collection = req.body;
+
+    res.render("./animals/edit-animal.ejs", { collection });
 }
 
+// POST LOGIC FUNCTIONS
+/**
+ * Creates a new animal in the database.
+ * @param {*} req 
+ * @param {*} res 
+ */
+async function createAnimal(req, res) {
+    // gets the data from the form
+    const formData = req.body;
 
-// MAIN LOGIC FUNCTIONS
+    // attempt to create a new animal
+    try {
+        console.log(formData);
+        // validate
+        let isAvailable = true;
+        if (formData.isTransportable == "AVIALABLE") 
+            isAvailable = true;
+        else 
+            isAvailable = false;
+
+        // create animal
+        await Animal.create({
+            zoo: formData.zoo,
+            scientificName: formData.scientificName,
+            commonName: formData.commonName,
+            givenName: formData.givenName,
+            gender: formData.gender,
+            dateOfBirth: formData.dateOfBirth,
+            age: formData.age,
+            isTransportable: isAvailable
+        });
+    
+    // catches any errors
+    } catch (err) {
+        console.log(`Error in creating animal...`);
+    }
+    res.redirect("/animals/entry-form");
+}
+
+async function deleteAnimal(req, res) {
+    try {
+        const animalId = req.params.animalId;
+        await Animal.deleteOne({ _id: animalId });
+        res.redirect("/animals/all-animals");
+    } catch (err) {
+        console.error("Error with getting saved collection");
+        res.status(500).send("Error in getting saved collection");
+    }
+  }
 
 module.exports = {
     displayHomePage,
     displayAnimalList,
     displayEntryForm,
-    displayEditAnimal
+    displayEditAnimal,
+    createAnimal,
+    deleteAnimal
 };

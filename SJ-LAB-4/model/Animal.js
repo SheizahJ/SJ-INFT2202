@@ -1,3 +1,4 @@
+// animal schema to be used in the database
 const mongoose = require("mongoose");
 
 const animalSchema = new mongoose.Schema({

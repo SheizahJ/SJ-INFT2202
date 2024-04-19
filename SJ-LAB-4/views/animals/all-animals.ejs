@@ -16,12 +16,12 @@
 		<%- include('../partials/_navbar.ejs')%>
 		<div class='container'>
             <!-- template for now -->
-            <% myCollection.forEach(animal => { %>
-            <form action="/animals/edit-animal" method="POST">
+            <% collection.forEach(animal => { %>
+            <div class="card p-3 bg-light">
                 <table class="table table-striped">
                     <tr>
                         <th class="col-md-2">Zoo</th>
-                        <td ><%= animal.zoo %></th>
+                        <td><%= animal.zoo %></th>
                     </tr>
                     <tr>
                         <th>Scientific Name</th>
@@ -52,8 +52,21 @@
                         <td><%= animal.isTransportable %></th>
                     </tr>
                 </table>
-                <input type="submit" class="btn btn-primary mb-2" value="Edit Animal"/>
-            </form>
+                <form action="/animals/edit-animal" method="POST">
+                    <input type="hidden" value="<%= animal._id %>" name="_id">
+                    <input type="hidden" value="<%= animal.zoo %>" name="zoo">
+                    <input type="hidden" value="<%= animal.scientificName %>" name="scientificName">
+                    <input type="hidden" value="<%= animal.commonName %>" name="commonName">
+                    <input type="hidden" value="<%= animal.givenName %>" name="givenName">
+                    <input type="hidden" value="<%= animal.gender %>" name="gender">
+                    <input type="hidden" value="<%= animal.dateOfBirth %>" name="dateOfBirth">
+                    <input type="hidden" value="<%= animal.age %>" name="age">
+                    <input type="hidden" value="<%= animal.isTransportable %>" name="isTransportable">
+    
+                    <input type="submit" class="btn btn-primary mb-2" value="Edit Animal"/>
+                </form>
+            </div>
+            <br/>
             <% }) %>
         </div>
 	</body>

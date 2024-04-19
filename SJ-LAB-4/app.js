@@ -6,7 +6,8 @@
 
 // constants
 const express = require("express");
-const animalController = require("./routes/animal");
+const animalRouter = require("./routes/animal");
+const bodyParser = require("body-parser");
 const DBConfig = require("./config/database");
 const app = express();
 
@@ -18,7 +19,11 @@ app.set("views", "./views");
 app.set("view engine", "ejs");
 
 // use
-app.use("/", animalController);
+app.use(express.static("public"));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+app.use("/", animalRouter);
 
 // listener
 app.listen(3500, () => {
