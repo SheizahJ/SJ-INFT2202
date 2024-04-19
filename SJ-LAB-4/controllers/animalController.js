@@ -43,8 +43,24 @@ function displayEntryForm(req, res) {
  */
 function displayEditAnimal(req, res) {
     // form's data
-    const collection = req.body;
+    const formData = req.body;
 
+    // set specific parameters
+    let newDate = new Date(formData.dateOfBirth);
+    let newDateOfBirth = newDate.toLocaleDateString('fr-CA');
+
+    // deliver new collection data
+    let collection = {
+        zoo: formData.zoo,
+        scientificName: formData.scientificName,
+        commonName: formData.commonName,
+        givenName: formData.givenName,
+        gender: formData.gender,
+        dateOfBirth: newDateOfBirth,
+        age: formData.age,
+        isTransportable: formData.isTransportable,
+
+    }
     res.render("./animals/edit-animal.ejs", { collection });
 }
 

@@ -39,10 +39,17 @@
                     </div>
                     <label for="gender">Gender</label>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="maleGender" name="gender" class="custom-control-input">
+                        <% if (collection.gender == "Male") {%>
+                        <input type="radio" id="maleGender" name="gender" class="custom-control-input" checked>
                         <label class="custom-control-label" for="maleGender">Male</label>
                         <input type="radio" id="femaleGender" name="gender" class="custom-control-input">
                         <label class="custom-control-label" for="femaleGender">Female</label>
+                        <% } else { %>
+                        <input type="radio" id="maleGender" name="gender" class="custom-control-input">
+                        <label class="custom-control-label" for="maleGender">Male</label>
+                        <input type="radio" id="femaleGender" name="gender" class="custom-control-input" checked>
+                        <label class="custom-control-label" for="femaleGender">Female</label>
+                        <% } %>
                     </div>
                     <div class="col">
                         <label for="dateOfBirth">Date of Birth</label>
@@ -54,10 +61,17 @@
                     </div>
                     <label for="isTransportable">Is Transportable</label>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="available" name="isTransportable" class="custom-control-input">
+                        <% if (collection.isTransportable == "true") {%>
+                        <input type="radio" id="available" name="isTransportable" class="custom-control-input" checked>
                         <label class="custom-control-label" for="available">Available</label>
                         <input type="radio" id="unavailable" name="isTransportable" class="custom-control-input">
                         <label class="custom-control-label" for="unavailable">Unavailable</label>
+                        <% } else { %>
+                        <input type="radio" id="available" name="isTransportable" class="custom-control-input">
+                        <label class="custom-control-label" for="available">Available</label>
+                        <input type="radio" id="unavailable" name="isTransportable" class="custom-control-input" checked>
+                        <label class="custom-control-label" for="unavailable">Unavailable</label>
+                        <% } %>
                     </div>
                     <br/>
                     <input type="submit" class="btn btn-primary mb-2" value="Confirm Edit"/>
