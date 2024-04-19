@@ -17,7 +17,7 @@
 		<div class="container">
             <h2>Edit Animal Entry</h2>
             <div class="form-row card p-3 bg-light" name="animal-form">
-                <form action="/animals/all-animals">
+                <form action="/animals/update-animal/<%= collection._id %>" method="POST">
                 
                     <h5>Edit Animal</h5>
                     <hr/>

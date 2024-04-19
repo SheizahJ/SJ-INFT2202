@@ -1,6 +1,7 @@
-// animal schema to be used in the database
+// required modules
 const mongoose = require("mongoose");
 
+// animal schema to be used in the database
 const animalSchema = new mongoose.Schema({
     zoo: String,
     scientificName: String,
@@ -12,6 +13,6 @@ const animalSchema = new mongoose.Schema({
     isTransportable: Boolean,
 });
 
+// export animal schema
 const Animal = mongoose.model("Animal", animalSchema);
-
 module.exports = Animal;

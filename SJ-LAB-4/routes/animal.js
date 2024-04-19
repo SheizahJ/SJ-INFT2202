@@ -12,6 +12,7 @@ router.post("/animals/edit-animal", animalController.displayEditAnimal);
 // post routes; data entry
 router.post("/animals/add-animal", animalController.createAnimal);
 router.post("/animals/delete-animal/:animalId", animalController.deleteAnimal);
+router.post("/animals/update-animal/:animalId", animalController.updateAnimal);
 
 // Share the router with others
 module.exports = router;
